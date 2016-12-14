@@ -18,11 +18,13 @@ export default class Senate extends Component {
     // also, what can I do with the const xxx {x, y, z} syntax?
     const { senateData } = this.state
     const mappedSenators = fromJS(senateData);
+
     return (
       <div>
-        <p> This worked! </p>
         { mappedSenators.map((senator, i) => (
-           <p>{senator.get('id')}</p>
+          <li key={senator.get('id')}>
+            {senator.get('person').get('name')}
+          </li>
          ))}
       </div>
     );
