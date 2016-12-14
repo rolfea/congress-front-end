@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Senate from './Senate.js';
-
 class App extends Component {
 
   // SenateData in componentDidMount
