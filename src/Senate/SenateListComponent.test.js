@@ -10,9 +10,14 @@ it('renders without crashing', () => {
   expect(wrapper).toExist;
 });
 
-const senatorList = [{name: "Barbara Boxer", state: "CA"}, {}, {}]
+// id person.firstname person.lastname state
+const senatorList = fromJS([
+  { person: { firstname: "Barbara", lastname: "Boxer" }, state: "CA" },
+  { person: { firstname: "Roy", lastname: "Blunt" }, state: "MO" },
+  { person: { firstname: "John", lastname: "Boozman" }, state: "AR"}
+]);
 
 it('renders senators', () => {
-  const wrapper = shallow (<SenateList mappedSenators={emptyData}/>);
-  expect(wrapper).toExist; // expect there 3 divs or classes
+  const wrapper = shallow(<SenateList mappedSenators={senatorList}/>);
+  expect(wrapper.to.have.length(3)); // expect there 3 divs or classes
 });
