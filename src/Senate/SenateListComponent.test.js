@@ -19,5 +19,5 @@ const senatorList = fromJS([
 
 it('renders senators', () => {
   const wrapper = shallow(<SenateList mappedSenators={senatorList}/>);
-  expect(wrapper.to.have.length(3)); // expect there 3 divs or classes
+  expect(wrapper).to.have.length(3);
 });
