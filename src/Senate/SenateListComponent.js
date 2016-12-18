@@ -1,5 +1,4 @@
 import React from 'react'
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import {List, ListItem} from 'material-ui/List'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
