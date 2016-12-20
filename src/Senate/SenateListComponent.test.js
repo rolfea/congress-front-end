@@ -19,5 +19,5 @@ const senatorList = fromJS([
 
 it('renders senators', () => {
   const wrapper = shallow(<SenateList mappedSenators={senatorList}/>);
-  expect(wrapper).to.have.length(3);
+  expect(wrapper.find('.listedSenator').length).toBe(3);
 });
