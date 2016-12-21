@@ -1,24 +1,24 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import { fromJS } from 'immutable'
-import {fetchRepData} from '../../lib/democracyApi.js';
 import {ListComponent} from '../../components/ListComponent';
+import { resolve } from 'react-resolver';
+import axios from 'axios'
+
+@resolve("houseData", () => {
+  return axios.get("https://www.govtrack.us/api/v2/role?role_type=representative&current=true");
+})
 
 export default class House extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {houseData: {}}
-  }
-
-  componentDidMount() {
-    fetchRepData().then((response) => this.setState({houseData: response}))
-  }
-
   render () {
-    const { houseData } = this.state
+    const { houseData } = this.props
     const mappedReps = fromJS(houseData);
 
     return (
-      <ListComponent mappedData={mappedReps} />
+      <ListComponent mappedData={mappedReps.data.objects} />
     );
   }
 }
+
+House.propTypes = {
+  houseData: PropTypes.object,
+};
