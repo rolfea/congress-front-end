@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import { fromJS } from 'immutable'
-import {fetchRepData} from '../lib/democracyApi.js';
-import {List, ListItem} from 'material-ui/List'
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ListComponent from '../ListComponent/ListComponent';
+import {fetchRepData} from '../../lib/democracyApi.js';
+import {ListComponent} from '../../components/ListComponent';
 
 export default class House extends Component {
   constructor(props) {
@@ -19,7 +16,6 @@ export default class House extends Component {
   render () {
     const { houseData } = this.state
     const mappedReps = fromJS(houseData);
-    const muiTheme = getMuiTheme({ });
 
     return (
       <ListComponent mappedData={mappedReps} />

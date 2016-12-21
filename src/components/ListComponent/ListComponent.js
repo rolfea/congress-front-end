@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {List, ListItem} from 'material-ui/List'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -31,3 +31,7 @@ const ListComponent = ({mappedData}) => {
 };
 
 export default ListComponent;
+
+ListComponent.propTypes = {
+  mappedData: PropTypes.object,
+};

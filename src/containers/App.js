@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import './App.css';
-import {fetchData} from './lib/components/Api.js';
+import '../containers/App.css';
 
 class App extends Component {
 

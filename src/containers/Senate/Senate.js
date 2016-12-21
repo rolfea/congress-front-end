@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { fromJS } from 'immutable'
-import {fetchSenatorData} from '../lib/democracyApi.js';
-import SenateListComponent from '../ListComponent/ListComponent';
+import {fetchSenatorData} from '../../lib/democracyApi.js';
+import SenateListComponent from '../../components/ListComponent/ListComponent';
 
 export default class Senate extends Component {
   constructor(props) {
