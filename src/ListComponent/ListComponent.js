@@ -1,10 +1,9 @@
 import React from 'react'
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import {List, ListItem} from 'material-ui/List'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const SenateListComponent = ({mappedSenators}) => {
+const ListComponent = ({mappedData}) => {
   const muiTheme = getMuiTheme({
 
   });
@@ -12,9 +11,9 @@ const SenateListComponent = ({mappedSenators}) => {
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <List>
-        { mappedSenators.valueSeq().map((senator, i) => (
+        { mappedData.valueSeq().map((senator, i) => (
           <ListItem
-            className="listedSenator"
+            className="listedPerson"
             key={senator.get('id')}
             primaryText={
               senator.get('person').get('firstname') + " " + senator.get('person').get('lastname')
@@ -28,4 +27,4 @@ const SenateListComponent = ({mappedSenators}) => {
   );
 };
 
-export default SenateListComponent;
+export default ListComponent;
