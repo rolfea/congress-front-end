@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { fromJS } from 'immutable'
 import {fetchRepData} from '../lib/representatives.js';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import {List, ListItem} from 'material-ui/List'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -19,16 +18,16 @@ export default class House extends Component {
   render () {
     const { houseData } = this.state
     const mappedReps = fromJS(houseData);
-    const muiTheme = getMuiTheme({ });
+    const muiTheme = getMuiTheme({ });    
 
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
           <List>
-          { mappedReps.map((rep, i) => (
+          { mappedReps.valueSeq().map((rep, i) => (
             <ListItem
               className="listedRep"
-              key={rep.get('id')}
+              key={i}
               primaryText={
                 rep.get('person').get('firstname') + " " + rep.get('person').get('lastname')
               }
