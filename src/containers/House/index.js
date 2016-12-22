@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {createContainer} from "react-transmit";
+import {createContainer} from 'react-transmit';
 import { fromJS } from 'immutable'
 import {fetchRepData} from '../../lib/democracyApi.js';
 import {ListComponent} from '../../components/ListComponent';
