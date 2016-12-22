@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import { fromJS } from 'immutable'
 import {fetchSenatorData} from '../../lib/democracyApi.js';
 import {ListComponent} from '../../components/ListComponent';
@@ -26,3 +26,6 @@ export default class Senate extends Component {
   }
 }
 
+Senate.propTypes = {
+  senateData: PropTypes.object,
+};
