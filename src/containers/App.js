@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StateListComponent from '../components/StateListComponent/StateListComponent';
 import { Link } from 'react-router'
 import '../containers/App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Senate and House Contact Information</h1>
+        <StateListComponent />
         <Link to="/house" activeClassName="active">House</Link>
         {' | '}
         <Link to="/senate" activeClassName="active">Senate</Link>
