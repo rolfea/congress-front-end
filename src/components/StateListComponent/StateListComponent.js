@@ -6,30 +6,26 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const styles = {
   customWidth: {
-    width: 400
+    width: 200
   },
 };
 const muiTheme = getMuiTheme({});
 
 export default class StateListComponent extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {value: 1};
-  }
-
-  //handleChange = (event, index, value) => this.setState({value});
-
   render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
           <DropDownMenu
-            value={this.state.value}
+            value={this.props.selectedState}
+            onChange={this.props.onHandleChange}
             style={styles.customWidth}
             autoWidth={false}
           >
-            <MenuItem></MenuItem>
+            <MenuItem value={"WI"} primaryText={"WI"} />
+            <MenuItem value={"CA"} primaryText={"CA"} />
+            <MenuItem value={"OH"} primaryText={"OH"} />
           </DropDownMenu>
         </div>
       </MuiThemeProvider>
