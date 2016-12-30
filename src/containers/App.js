@@ -22,7 +22,7 @@ class App extends Component {
         <StateListComponent onHandleChange={this.handleChange} selectedState={selectedState}/>
         <Link to={`/house${selectedState ? "?state=" + selectedState : ""}`} activeClassName="active">House</Link>
         {' | '}
-        <Link to="/senate" activeClassName="active">Senate</Link>
+        <Link to={`/senate${selectedState ? "?state=" + selectedState : ""}`} activeClassName="active">Senate</Link>
         {this.props.children}
       </div>
     );
