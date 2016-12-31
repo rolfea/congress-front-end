@@ -21,7 +21,6 @@ export default createContainer(Senate, {
   }
 });
 
-
 Senate.propTypes = {
   senateData: PropTypes.array,
   location: PropTypes.object,

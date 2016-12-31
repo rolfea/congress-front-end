@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import StateListComponent from '../components/StateListComponent/StateListComponent';
-// import Location from "../components/Location/Location";
 import { Link } from 'react-router'
 import '../containers/App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -16,11 +15,12 @@ class App extends Component {
 
   render() {
     const {selectedState} = this.state;
+    const {userLocation} = this.context
 
     return (
       <div className="App">
         <h1>Senate and House Contact Information</h1>
-        <StateListComponent onHandleChange={this.handleChange} selectedState={selectedState}/>
+        <StateListComponent onHandleChange={this.handleChange} selectedState={selectedState || userLocation}/>
         <Link to={`/house${selectedState ? "?state=" + selectedState : ""}`} activeClassName="active">House</Link>
         {' | '}
         <Link to={`/senate${selectedState ? "?state=" + selectedState : ""}`} activeClassName="active">Senate</Link>
@@ -31,3 +31,7 @@ class App extends Component {
 }
 
 export default App;
+
+App.contextTypes = {
+  userLocation: React.PropTypes.string
+};
