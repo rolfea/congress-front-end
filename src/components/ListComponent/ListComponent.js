@@ -4,16 +4,15 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import { concatName } from '../../helper/dataHelper';
 
-const ListComponent = ({mappedData}) => {
-  const muiTheme = getMuiTheme({
+const ListComponent = ({mappedData, selectedState}) => {
+  const filteredData = selectedState ? mappedData.filter((item) => item.get('state') === selectedState): mappedData;  
 
-  });
-
+  const muiTheme = getMuiTheme({});
   return (
     <MuiThemeProvider muiTheme={muiTheme}>
       <div>
         <List>
-        { mappedData.valueSeq().map((senator, i) => (
+        { filteredData.valueSeq().map((senator, i) => (
           <ListItem
             className="listedPerson"
             key={senator.get('id')}

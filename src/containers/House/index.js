@@ -5,12 +5,17 @@ import {fetchRepData} from '../../lib/democracyApi.js';
 import {ListComponent} from '../../components/ListComponent';
 
 class House extends Component {
+
   render () {
+    const searchQuery = this.props.location.search;
+    const selectedState = searchQuery.split("?state=")[1];
+    console.log(selectedState);
+
     const { houseData } = this.props
     const mappedReps = fromJS(houseData);
 
     return (
-      <ListComponent mappedData={mappedReps} />
+      <ListComponent selectedState={selectedState} mappedData={mappedReps} />
     );
   }
 }
