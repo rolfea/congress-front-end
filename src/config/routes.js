@@ -1,8 +1,8 @@
 import React from 'react';
-import App from '../App.js';
+import App from '../containers/App.js';
 import { Route } from 'react-router';
-import Senate from '../Senate/Senate';
-import House from '../House/House';
+import Senate from '../containers/Senate';
+import House from '../containers/House';
 
 module.exports= (
   <div>
