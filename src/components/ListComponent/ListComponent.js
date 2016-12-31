@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/Senate/SenateListComponent.js
-import React from 'react'
-=======
 import React, {PropTypes} from 'react'
->>>>>>> add-dropdown-list:src/components/ListComponent/ListComponent.js
 import {List, ListItem} from 'material-ui/List'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';

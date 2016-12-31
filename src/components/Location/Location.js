@@ -1,7 +1,7 @@
 /*eslint-disable */
 import React from 'react';
 import {geolocated} from 'react-geolocated';
-import {fetchLocationData} from '../lib/location.js';
+import {fetchLocationData} from '../../lib/location.js';
 
 class Location extends React.Component {
   constructor(props) {

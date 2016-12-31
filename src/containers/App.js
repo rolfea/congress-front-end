@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StateListComponent from '../components/StateListComponent/StateListComponent';
-import Location from "./Location/Location";
+// import Location from "../components/Location/Location";
 import { Link } from 'react-router'
 import '../containers/App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -19,7 +19,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Location />
         <h1>Senate and House Contact Information</h1>
         <StateListComponent onHandleChange={this.handleChange} selectedState={selectedState}/>
         <Link to={`/house${selectedState ? "?state=" + selectedState : ""}`} activeClassName="active">House</Link>
