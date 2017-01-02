@@ -15,8 +15,7 @@ export default class Senate extends Component {
 
   render () {
     const searchQuery = this.props.location.search;
-    const selectedState = searchQuery.split("?state=")[1];
-    console.log(selectedState);
+    const selectedState = searchQuery.split("?state=")[1];    
 
     const { senateData } = this.state
     const mappedSenators = fromJS(senateData);
