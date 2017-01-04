@@ -1,22 +1,17 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PropTypes} from 'react';
 import {createContainer} from 'react-transmit';
 import { fromJS } from 'immutable'
 import {fetchRepData} from '../../lib/democracyApi.js';
 import {ListComponent} from '../../components/ListComponent';
 
-class House extends Component {
+const House = ({location, houseData}) => {
+  const searchQuery = location.search;
+  const selectedState = searchQuery.split("?state=")[1];
+  const mappedReps = fromJS(houseData);
 
-  render () {
-    const searchQuery = this.props.location.search;
-    const selectedState = searchQuery.split("?state=")[1];    
-
-    const { houseData } = this.props
-    const mappedReps = fromJS(houseData);
-
-    return (
-      <ListComponent selectedState={selectedState} mappedData={mappedReps} />
-    );
-  }
+  return (
+    <ListComponent selectedState={selectedState} mappedData={mappedReps} />
+  );
 }
 
 export default createContainer(House, {
@@ -27,5 +22,6 @@ export default createContainer(House, {
 });
 
 House.propTypes = {
-  houseData: PropTypes.object,
+  houseData: PropTypes.array,
+  location: PropTypes.object,
 };

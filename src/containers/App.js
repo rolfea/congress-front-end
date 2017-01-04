@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import StateListComponent from '../components/StateListComponent/StateListComponent';
+
 import { Link, browserHistory } from 'react-router'
+
 import '../containers/App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -11,6 +13,7 @@ class App extends Component {
     this.state = {selectedState: null}
   }
 
+
   handleChange = (event, index, value) => {
     this.setState({selectedState: value}),
     browserHistory.push(`${browserHistory.getCurrentLocation().pathname}${"?state=" + value}`)
@@ -18,6 +21,7 @@ class App extends Component {
 
   render() {
     const {selectedState} = this.state;
+
     return (
       <div className="App">
         <h1>Senate and House Contact Information</h1>
