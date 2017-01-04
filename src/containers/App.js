@@ -11,17 +11,13 @@ class App extends Component {
     this.state = {selectedState: null}
   }
 
-  handleChange = (event, index, value) => this.setState({selectedState: value});
-
-    // browserHistory.push(`/house${"?state=" + selectedState}`);
-  ComponentDidUpdate(prevProps, prevState) {
-    console.log(prevState);
-  }
-
+  handleChange = (event, index, value) => {
+    this.setState({selectedState: value}),
+    browserHistory.push(`${browserHistory.getCurrentLocation().pathname}${"?state=" + value}`)
+  }    
 
   render() {
     const {selectedState} = this.state;
-
     return (
       <div className="App">
         <h1>Senate and House Contact Information</h1>
