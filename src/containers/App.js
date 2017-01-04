@@ -3,6 +3,7 @@ import StateListComponent from '../components/StateListComponent/StateListCompon
 import { Link } from 'react-router'
 import '../containers/App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import styled from 'styled-components'
 injectTapEventPlugin();
 
 class App extends Component {
@@ -18,7 +19,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Senate and House Contact Information</h1>
+        <Title>You Work For Me</Title>
+        <h3>Senate and House Contact Information</h3>
         <StateListComponent onHandleChange={this.handleChange} selectedState={selectedState}/>
         <Link to={`/house${selectedState ? "?state=" + selectedState : ""}`} activeClassName="active">House</Link>
         {' | '}
@@ -28,5 +30,13 @@ class App extends Component {
     );
   }
 }
+
+// styling with styled components
+const Title = styled.h1`
+  font-size: 2em;
+  text-align: center;
+  color: #243D6E;
+`;
+
 
 export default App;

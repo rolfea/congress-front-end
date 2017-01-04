@@ -1,10 +1,6 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  background-color: #BCC7DF;
 }
 
 .App-header {
@@ -18,12 +14,12 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 .active {
-  color: green;
+  color: #243D6E;
   font-size: 125%;
+}
+
+.listedPerson {
+  color: red  ;
 }
