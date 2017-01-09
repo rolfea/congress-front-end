@@ -5,9 +5,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const styles = {
-  customWidth: {
-    width: 200
-  },
+  width: 100,
+  height: 40,
+  boxShadow: '1px 1px 2px 2px #5D73A0',
 };
 const muiTheme = getMuiTheme({});
 
@@ -20,7 +20,7 @@ export default class StateListComponent extends React.Component {
           <DropDownMenu
             value={this.props.selectedState}
             onChange={this.props.onHandleChange}
-            style={styles.customWidth}
+            style={styles}
             autoWidth={false}
           >
             <MenuItem value={"WI"} primaryText={"WI"} />
