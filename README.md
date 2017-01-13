@@ -1,5 +1,5 @@
 ## **You Work for Me**
-Find and contact your congressional representatives  
+Contact your congressional representatives and tell them that
 [You Work for Me](youworkforme.netlify.com)
 ___
 ### Installation and Configuration
@@ -7,7 +7,7 @@ ___
 If you're interested in looking at the code and making any contributions, follow the steps below to get the repository up and running on your own system.  
 
 First, navigate to the directory you want to house the app in and clone the repository:  
-`git clone https://github.com/rolfea/congress-front-end.git `  
+`git clone https://github.com/rolfea/you-work-for-me.git `  
 
 Then install the dependencies with npm:  
 `npm install`  
