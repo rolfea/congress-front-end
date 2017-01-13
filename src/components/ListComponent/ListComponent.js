@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import {List, ListItem} from 'material-ui/List'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {fromJS} from 'immutable';
 // import { concatName } from '../../helper/dataHelper';
 
 const ListComponent = ({mappedData, selectedState}) => {
