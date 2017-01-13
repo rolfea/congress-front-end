@@ -1,28 +1,27 @@
-import React, {Component, PropTypes} from 'react';
+import React, {PropTypes} from 'react';
+import {createContainer} from 'react-transmit';
 import { fromJS } from 'immutable'
 import {fetchSenatorData} from '../../lib/democracyApi.js';
 import {ListComponent} from '../../components/ListComponent';
 
-export default class Senate extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {senateData: {}}
-  }
+const Senate = ({location, senateData}) => {
+  const searchQuery = location.search;
+  const selectedState = searchQuery.split("?state=")[1];
+  const mappedSenators = fromJS(senateData);
 
-  componentDidMount() {
-    fetchSenatorData().then((response) => this.setState({senateData: response}))
-  }
-
-  render () {
-    const { senateData } = this.state
-    const mappedSenators = fromJS(senateData);
-
-    return (
-      <ListComponent mappedData={mappedSenators}/>
-    );
-  }
+  return (
+    <ListComponent selectedState={selectedState} mappedData={mappedSenators}/>
+  );
 }
 
+export default createContainer(Senate, {
+  initialVariables: {},
+  fragments: {
+    senateData: () => fetchSenatorData().then(res => res),
+  }
+});
+
 Senate.propTypes = {
-  senateData: PropTypes.object,
+  senateData: PropTypes.array,
+  location: PropTypes.object,
 };

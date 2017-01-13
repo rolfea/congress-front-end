@@ -11,24 +11,23 @@ const styles = {
 };
 const muiTheme = getMuiTheme({});
 
-export default class StateListComponent extends React.Component {
-
-  render() {
-    return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <div>
-          <DropDownMenu
-            value={this.props.selectedState}
-            onChange={this.props.onHandleChange}
-            style={styles.customWidth}
-            autoWidth={false}
-          >
-            <MenuItem value={"WI"} primaryText={"WI"} />
-            <MenuItem value={"CA"} primaryText={"CA"} />
-            <MenuItem value={"OH"} primaryText={"OH"} />
-          </DropDownMenu>
-        </div>
-      </MuiThemeProvider>
-    )
-  }
+const StateListComponent = ({selectedState, onHandleChange}) => {
+  return (
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <div>
+        <DropDownMenu
+          value={selectedState}
+          onChange={onHandleChange}
+          style={styles.customWidth}
+          autoWidth={false}
+        >
+          <MenuItem value={"WI"} primaryText={"WI"} />
+          <MenuItem value={"CA"} primaryText={"CA"} />
+          <MenuItem value={"OH"} primaryText={"OH"} />
+        </DropDownMenu>
+      </div>
+    </MuiThemeProvider>
+  )
 }
+
+export default StateListComponent;
